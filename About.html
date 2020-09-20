@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<title>About</title>
+ 	<link rel="stylesheet" type="text/css" href="styles.css">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="Font-Awesome-4.7/css/font-awesome.min.css">
+
+
+ 	<style type="text/css">
+ 		.grid-container > p{
+
+ 			display: grid;
+ 			background-color: white;
+ 			
+ 			position: relative;
+ 			top: 0px;
+ 		}
+ 	</style>
+</head>
+<body>
+
+	<div style ="background-image: linear-gradient(to  right, #B8F8F4,  #B8F8F4 );"class = "container">	
+
+	<h1 class="title-style" style="font-family: courier;">     Fun flash games</h1>
+		
+		<div class="nav-wrapper"> 
+			
+		
+			<div class="left-side">
+
+				<div class="title-wrapper">
+				<i class="fa fa-gamepad" style="font-size:50px">&nbsp</i>
+				
+				</div>
+
+			</div>
+
+			<div class="right-side">
+
+				
+			
+
+				<div class="nav-link-wrapper">
+					<a href="index.html">Arcade</a>
+				</div>
+
+				<div class="nav-link-wrapper">
+					<a href="shooter.html">Shooter</a>
+				</div>
+				<div class="nav-link-wrapper">
+					<a href="casual.html">Casual</a>
+				</div>
+				
+			
+				<div class="nav-link-wrapper">
+					<a href="About.html">About</a>
+				</div>
+				<div class="nav-link-wrapper">
+					<a href="Contact.html" >Contact</a>
+				</div>
+				</div>
+			
+		</div>
+
+		<div class="grid-container"> 
+
+	
+		<div style="background-color: white; margin:20px;">
+		<img src="images/pic3.jpg" alt="headphone"  height="100%" width="100%" style="  opacity: 80%;" >
+		<p id="about-style">
+
+			<b>FUN FLASH GAMES</b> - a free online gaming website. Just like any other flash games website you can click and play whichever game you like. You can select your own choice of game category from the menu above. Each category has multiple games to play with. It has a collection of many varieties such as racing, adventure, puzzle, educational and even Make up games. It will be a  great time pass for mini-game lovers!  <br><br>
+			<b>Benefits of gaming:</b><br><br>
+Games are engaging they require higher order thinking, problem solving and persistence. Many games, even first-person shooting video games (which may not be appropriate for children) teach cooperation, group work and scenario-based learning. Most games require strategy to understand and then work within the rules. All games offer a mix of intrinsic and extrinsic rewards. Humans play games precisely because they are captivating and reward us when we succeed. The Australian Office of the eSafety Commissioner, Think U Know UK, and the NZ organisation Netsafe all recognise that online games can help to develop teamwork, concentration, communication and problem-solving skills. They are also an opportunity for young people to practise communication and conflict resolution skills. <br><br>
+<b>How can online games improve thinking skills?</b><br><br>
+Research by the Queensland University of Technology has found that games can improve thinking skills in children. Games often require children to follow instructions, consider their actions, and respond to problems. This can help develop important thinking skills, such as:
+
+awareness of the environment
+attention to detail
+problem-solving and planning
+literacy.
+		</p>
+</div>
+
+</div>
+
+
+		
+
+
+		
+
+	<div class="footer-wrapper">
+
+				<div class="social-media-icon-container">
+			   	<div class="social-media-icon-style">
+                     <a href="https://www.facebook.com/aagashkumar.saravanaperumal" target="_blank" class="tm-social-link"><i class="fa fa-facebook"></i></a>
+                     <a href="https://www.instagram.com/aagash_kumar/?hl=en"  target="_blank"class="tm-social-link"><i class="fa fa-instagram" style="font-weight: bolder;"></i></a>
+					 <a href="https://www.linkedin.com/in/aagash-kumar-3860a916a/" target="_blank"  class="tm-social-link"><i class="fa fa-linkedin"></i></a>
+             	 </div>
+          		</div>
+
+	</div>
+
+	<div class="footer-wrapper2">  
+
+
+		<p >Copyright &copy; 2020 | Fun Flash Games | Aagash Kumar S | <i class="fa fa-smile-o"></i> </p>
+
+	</div>
+
+
+
+
+<script>
+
+const gameitems = document.querySelectorAll('.subtitle-wrapper');
+
+gameitems.forEach(gameitem => {
+ gameitem.addEventListener('mouseover', () => {
+	console.log(gameitem.childNodes[1].classList)
+	gameitem.childNodes[1].classList.add('text-highlight');
+});
+
+	gameitem.addEventListener('mouseout', () => {
+	console.log(gameitem.childNodes[1].classList)
+	gameitem.childNodes[1].classList.remove('text-highlight');
+});
+});
+
+</script>
+
+
+
+<script type="text/javascript">
+	var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+
+Resources
+</script>
+
+
+
+
+
+</body>
+
+</html>
